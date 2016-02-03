@@ -35,8 +35,8 @@
 		ADF324261C627A3000B1118F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADF3242C1C627A4000B1118F /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		ADF3242E1C627A8500B1118F /* Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test-Bridging-Header.h"; sourceTree = "<group>"; };
-		ADF3242F1C627A8500B1118F /* PMAdCommandResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAdCommandResponder.h; sourceTree = "<group>"; };
-		ADF324301C627B0700B1118F /* PMAdCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAdCommand.h; sourceTree = "<group>"; };
+		ADF3242F1C627A8500B1118F /* CommandResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandResponder.h; sourceTree = "<group>"; };
+		ADF324301C627B0700B1118F /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		ADF324311C627BD100B1118F /* WeakObjectContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObjectContainer.swift; sourceTree = "<group>"; };
 		ADF324351C627F5F00B1118F /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,9 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				ADF3242C1C627A4000B1118F /* NSObject.swift */,
-				ADF3242F1C627A8500B1118F /* PMAdCommandResponder.h */,
+				ADF3242F1C627A8500B1118F /* CommandResponder.h */,
 				ADF324311C627BD100B1118F /* WeakObjectContainer.swift */,
-				ADF324301C627B0700B1118F /* PMAdCommand.h */,
+				ADF324301C627B0700B1118F /* Command.h */,
 			);
 			name = "Commnad Chain Framework";
 			sourceTree = "<group>";

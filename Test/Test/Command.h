@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol PMAdCommand <NSObject>
+@protocol Command <NSObject>
 
 @end

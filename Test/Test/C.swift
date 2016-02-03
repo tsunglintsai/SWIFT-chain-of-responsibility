@@ -11,7 +11,7 @@ import UIKit
 class C: NSObject {
     override init() {
         super.init()
-        buttonView.adCommandResponderSuccessor = self
+        buttonView.commandResponderSuccessor = self
     }
     var buttonView = ButtonView(frame: CGRect(x: 10, y: 10, width: 100, height: 100)) {
         didSet {

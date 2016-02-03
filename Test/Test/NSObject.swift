@@ -12,12 +12,12 @@ import Foundation
 ///
 ///
 ///
-extension NSObject: PMAdCommandResponder {
+extension NSObject: CommandResponder {
     
-    public var adCommandResponderSuccessor: PMAdCommandResponder? {
+    public var commandResponderSuccessor: CommandResponder? {
         get {
             if let cl = objc_getAssociatedObject(self, &PMCommandResponderSuccessorKey.DescriptiveName) as? WeakObjectContainer {
-                if let object = cl.object as? PMAdCommandResponder{
+                if let object = cl.object as? CommandResponder{
                     return object
                 }
             }
@@ -25,12 +25,12 @@ extension NSObject: PMAdCommandResponder {
         }
         set {
             // check reference circle. we should
-            var pointer = self.adCommandResponderSuccessor
+            var pointer = self.commandResponderSuccessor
             while pointer != nil {
                 if pointer === self {
                     fatalError("Found reference circle in command chain")
                 }
-                pointer = pointer?.adCommandResponderSuccessor
+                pointer = pointer?.commandResponderSuccessor
             }
             
             objc_setAssociatedObject( self, &PMCommandResponderSuccessorKey.DescriptiveName, WeakObjectContainer(object: newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC )
@@ -41,7 +41,7 @@ extension NSObject: PMAdCommandResponder {
         static var DescriptiveName = "PMCommandResponderSuccessorKey"
     }
     
-    public func _processAdCommand(command: PMAdCommand!) -> Bool {
+    public func _processAdCommand(command: Command!) -> Bool {
         if respondsToSelector("processAdCommand:") && processAdCommand(command) {
             return true
         } else {
@@ -49,12 +49,12 @@ extension NSObject: PMAdCommandResponder {
         }
     }
     
-    public func processAdCommand(command: PMAdCommand!) -> Bool {
+    public func processAdCommand(command: Command!) -> Bool {
         return false
     }
     
-    public func haveSuccessorProcessCommand(command: PMAdCommand!) -> Bool{
-        if let adCommandResponderSuccessor = adCommandResponderSuccessor {
+    public func haveSuccessorProcessCommand(command: Command!) -> Bool{
+        if let adCommandResponderSuccessor = commandResponderSuccessor {
             return adCommandResponderSuccessor._processAdCommand(command)
         } else {
             return false

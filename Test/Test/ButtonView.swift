@@ -34,7 +34,7 @@ class ButtonView: UIView {
     }
     
     func buttonTapped() {
-        let command = PMAdCommandA(content: ["A":"a","B":"b"])
+        let command = CommandA(content: ["A":"a","B":"b"])
         print(haveSuccessorProcessCommand(command))
     }
 }

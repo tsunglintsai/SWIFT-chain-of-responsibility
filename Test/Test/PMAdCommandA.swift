@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PMAdCommandA: NSObject, PMAdCommand {
+class CommandA: NSObject, Command {
     var content:[String:AnyObject]
     init(content:[String:AnyObject]) {
         self.content = content

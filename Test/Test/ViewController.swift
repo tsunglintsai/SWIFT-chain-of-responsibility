@@ -16,16 +16,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        a.adCommandResponderSuccessor = self
-        b.adCommandResponderSuccessor = a
-        c.adCommandResponderSuccessor = b
+        a.commandResponderSuccessor = self
+        b.commandResponderSuccessor = a
+        c.commandResponderSuccessor = b
         view.addSubview(c.buttonView)
     }
 
 
-    override func processAdCommand(command: PMAdCommand!) -> Bool {
+    override func processAdCommand(command: Command!) -> Bool {
         print("ViewController:\(command)")
-        if let adCommand = command as? PMAdCommandA {
+        if let adCommand = command as? CommandA {
             print(adCommand.content)
         }
         return true
